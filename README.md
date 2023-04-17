@@ -1,5 +1,5 @@
 ## Introduction
-devopssecProject is a simple application developed using Django and Python that performs basic CRUD operation (to create/list/modify and delete Employee). SQLite is used for persisting data. 
+DevOpsSec Project is a simple application developed using Django and Python that performs basic CRUD operation (to create/list/modify and delete Employee). SQLite is used for persisting data. 
 
 ### Run Server
 `python3 manage.py runserver`
