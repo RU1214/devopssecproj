@@ -19,7 +19,18 @@
     </tr>    
   </table>    
 <form method="POST" class="post-form" action="/update/{{employee.id}}">  
-        {% csrf_token %}    
+  {% csrf_token %}    
+  {% if user.is_authenticated %}
+  <table class="table table-striped table-bordered table-sm" align="center">
+      <tr>
+          <td align="left">
+              Hi {{ user.username }}!
+          </td>
+          <td align="right">
+              <a href="{% url 'logout' %}">Log Out</a>
+          </td>
+      </tr>    
+  </table>
   <table align="center">
     <tr>
       <td colspan="1"><h3>Update Details</h3></td>
@@ -43,7 +54,19 @@
     <tr>
       <td colspan="1"><button type="submit" class="btn btn-success">Update</button></td>
     </tr>
-  </table> 
+  </table>
+  {% else %}
+  <table class="table table-striped table-bordered table-sm" align="center">
+      <tr>
+          <td>
+              You are not logged in
+          </td>
+          <td>
+              <a href="{% url 'login' %}">Log In</a>
+          </td>
+      </tr>    
+  </table>  
+  {% endif %} 
 </form>  
 </body>  
 </html>

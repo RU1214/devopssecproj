@@ -1,0 +1,29 @@
+<!-- templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<table class="table table-striped table-bordered table-sm" align="center">
+<tr>
+    <td>
+        <img src="../../static/images/favicon.ico" width="200px" height="150px">
+    </td>
+    <td>
+        <img src="../../static/images/Naseem_DevOpsSec_Banner.png" width="600px" height="150px">
+    </td>
+</tr>    
+</table>
+<table align="center">
+    <tr>
+      <td>
+        <h2>Log In</h2>
+        <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log In</button>
+        </form>
+      </td>
+    </tr>
+</table>
+{% endblock %}

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-7uw68pm0fs*nz5t%fdg2iyyettb9(cy0dwm_um+ww+!=ri8gnq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['employeeappnaseem-env.eba-qtqtmbz5.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['employeeappnaseem-env.eba-qtqtmbz5.us-east-1.elasticbeanstalk.com','*']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'devopssecproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -123,3 +123,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# django_project/settings.py
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
